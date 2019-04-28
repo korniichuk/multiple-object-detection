@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a8
+# Version: 0.1a9
 
 from os.path import exists, isfile
 
@@ -113,3 +113,30 @@ def multiple_objects_detection(template, image, scale=1.0,
             cv.waitKey(0)
             cv.destroyAllWindows()
     return result
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image
+#result = multiple_objects_detection('template.jpg', 'example.jpg')
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image. Where scale of source image to template is 1:2
+#result = multiple_objects_detection('template.jpg', 'example.jpg', scale=0.5)
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image. Where scale of source image to template is 2:1
+#result = multiple_objects_detection('template.jpg', 'example.jpg', scale=2.0)
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image with cv.TM_CCORR_NORMED method
+#result = multiple_objects_detection('template.jpg', 'example.jpg',
+#                                    method='cv.TM_SQDIFF_NORMED')
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image with best matches from 0.9 to 1.0 (>=0.9 and <=1.0)
+#result = multiple_objects_detection('template.jpg', 'example.jpg',
+#                                     threshold=0.9)
+
+# Example. Multiple detection of template.jpg object in example.jpg
+# source image and visualization with Matplotlib
+#result = multiple_objects_detection('template.jpg', 'example.jpg',
+#                                    mode='matplotlib')
