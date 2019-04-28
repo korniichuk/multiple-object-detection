@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a4
+# Version: 0.1a5
 
 from os.path import exists, isfile
 
@@ -80,4 +80,12 @@ def multiple_objects_detection(template, image, scale=1.0,
          return result
     # Match template
     match = cv.matchTemplate(img, resized, method)
+    # Check 'threshold' param
+    if method in [cv.TM_CCOEFF, cv.TM_CCORR, cv.TM_SQDIFF]:
+        return result
+    elif method  == cv.TM_SQDIFF_NORMED:
+        threshold = 1 - threshold
+        loc = np.where(match <= threshold)
+    else:
+        loc = np.where(match >= threshold)
     return result
