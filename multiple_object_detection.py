@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Version: 0.1a2
 
+import cv2 as cv
+
 def multiple_objects_detection(template, image, scale=1.0,
         method='cv.TM_CCOEFF_NORMED', threshold=0.7, mode='hide'):
     """Multiple object detection. Function compares template against overlapped
@@ -29,4 +31,12 @@ def multiple_objects_detection(template, image, scale=1.0,
 
     """
 
-    pass
+    result = []
+    color = (255, 0, 0) # RGB color model
+    thickness = 8 # thickness of line
+
+    # Verify 'method'
+    if method not in ('cv.TM_CCOEFF', 'cv.TM_CCOEFF_NORMED', 'cv.TM_CCORR',
+            'cv.TM_CCORR_NORMED', 'cv.TM_SQDIFF', 'cv.TM_SQDIFF_NORMED'):
+        return 1
+    method = eval(method)
