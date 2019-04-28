@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a2
+# Version: 0.1a3
+
+from os.path import exists, isfile
 
 import cv2 as cv
 
@@ -35,8 +37,20 @@ def multiple_objects_detection(template, image, scale=1.0,
     color = (255, 0, 0) # RGB color model
     thickness = 8 # thickness of line
 
-    # Verify 'method'
-    if method not in ('cv.TM_CCOEFF', 'cv.TM_CCOEFF_NORMED', 'cv.TM_CCORR',
+    # Verify 'method' param
+    if method in ('cv.TM_CCOEFF', 'cv.TM_CCOEFF_NORMED', 'cv.TM_CCORR',
             'cv.TM_CCORR_NORMED', 'cv.TM_SQDIFF', 'cv.TM_SQDIFF_NORMED'):
+        method = eval(method)
+    else:
         return 1
-    method = eval(method)
+    # Load template from file
+    if exists(template) and isfile(template):
+        tmpl = cv.imread(template)
+    else:
+        return 1
+    # Load source images from file
+    if exists(image) and isfile(image):
+        img = cv.imread(image)
+    else:
+        return 1
+    return result
