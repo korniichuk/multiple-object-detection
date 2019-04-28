@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a5
+# Version: 0.1a6
 
 from os.path import exists, isfile
 
@@ -88,4 +88,9 @@ def multiple_objects_detection(template, image, scale=1.0,
         loc = np.where(match <= threshold)
     else:
         loc = np.where(match >= threshold)
+    # Store results of match to 'result'
+    for el in zip(*loc[::-1]):
+        start_x, start_y = el
+        end_x, end_y = int(start_x + tw/r), int(start_y + th/r)
+        result.append([(start_x, start_y), (end_x, end_y)])
     return result
