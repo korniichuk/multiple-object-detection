@@ -10,9 +10,10 @@
 * **[Python lib versions](#python-lib-versions)**
 
 ## Introduction
-Multiple detection of Twitter logo in example source image:
+Multiple detection of **Twitter logo** in example source image:
 ![match_twitter.jpg](img/match_twitter.jpg)
-Multiple detection of Instagram logo in example source image:
+
+Multiple detection of **Instagram logo** in example source image:
 ![match_instagram.jpg](img/match_instagram.jpg)
 
 ## Portability
