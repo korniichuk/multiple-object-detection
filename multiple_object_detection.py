@@ -48,9 +48,17 @@ def multiple_objects_detection(template, image, scale=1.0,
         tmpl = cv.imread(template)
     else:
         return 1
-    # Load source images from file
+    # Load source image from file
     if exists(image) and isfile(image):
         img = cv.imread(image)
     else:
         return 1
+    # Convert template to grayscale color model
+    tmpl = cv.cvtColor(tmp, cv.COLOR_BGR2GRAY)
+    # Convert source image to grayscale color model
+    img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    # Get width and height of template
+    th, tw = tmp.shape
+    # Get width and height of source image
+    ih, iw = img.shape
     return result
