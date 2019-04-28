@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a7
+# Version: 0.1a8
 
 from os.path import exists, isfile
 
@@ -94,13 +94,22 @@ def multiple_objects_detection(template, image, scale=1.0,
         start_x, start_y = el
         end_x, end_y = int(start_x + tw/r), int(start_y + th/r)
         result.append([(start_x, start_y), (end_x, end_y)])
-    # Visualization in Matplotlib
-    if mode == 'matplotlib':
+    # Check 'mode' param
+    if mode != 'hide':
         visualization = cv.cvtColor(img, cv.COLOR_GRAY2RGB)
         for el in result:
             start, end = el
             cv.rectangle(visualization, start, end, color, thickness)
-        plt.imshow(visualization)
-        plt.title('Scale: %s' % scale)
-        plt.show()
+        # Visualization in Matplotlib
+        if mode == 'matplotlib':
+            plt.imshow(visualization)
+            plt.title('Scale: %s' % scale)
+            plt.show()
+        # Visualization in OpenCV
+        elif mode == 'opencv':
+            visualization = cv.cvtColor(visualization, cv.COLOR_RGB2BGR)
+            title = 'Scale: %s' % scale
+            cv.imshow(title, visualization)
+            cv.waitKey(0)
+            cv.destroyAllWindows()
     return result
