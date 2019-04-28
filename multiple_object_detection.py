@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a6
+# Version: 0.1a7
 
 from os.path import exists, isfile
 
 import cv2 as cv
 import imutils
 import numpy as np
+from matplotlib import pyplot as plt
 
 def multiple_objects_detection(template, image, scale=1.0,
         method='cv.TM_CCOEFF_NORMED', threshold=0.7, mode='hide'):
@@ -93,4 +94,13 @@ def multiple_objects_detection(template, image, scale=1.0,
         start_x, start_y = el
         end_x, end_y = int(start_x + tw/r), int(start_y + th/r)
         result.append([(start_x, start_y), (end_x, end_y)])
+    # Visualization in Matplotlib
+    if mode == 'matplotlib':
+        visualization = cv.cvtColor(img, cv.COLOR_GRAY2RGB)
+        for el in result:
+            start, end = el
+            cv.rectangle(visualization, start, end, color, thickness)
+        plt.imshow(visualization)
+        plt.title('Scale: %s' % scale)
+        plt.show()
     return result
