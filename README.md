@@ -20,6 +20,16 @@ $ sudo apt-get update
 $ sudo apt-get install python3-pil.imagetk python3-tk
 ```
 
+Install Python packages:
+```
+$ sudo pip install -r requirements.txt
+```
+
+or
+```
+$ pipenv install
+```
+
 ## Python lib versions
 * [imutils](https://pypi.org/project/imutils/) ver. 0.5.2
 * [numpy](https://pypi.org/project/numpy/) ver. 1.16.3
