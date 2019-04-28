@@ -4,6 +4,7 @@
 from os.path import exists, isfile
 
 import cv2 as cv
+import imutils
 
 def multiple_objects_detection(template, image, scale=1.0,
         method='cv.TM_CCOEFF_NORMED', threshold=0.7, mode='hide'):
@@ -54,11 +55,23 @@ def multiple_objects_detection(template, image, scale=1.0,
     else:
         return 1
     # Convert template to grayscale color model
-    tmpl = cv.cvtColor(tmp, cv.COLOR_BGR2GRAY)
+    tmpl = cv.cvtColor(tmpl, cv.COLOR_BGR2GRAY)
     # Convert source image to grayscale color model
     img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     # Get width and height of template
-    th, tw = tmp.shape
+    th, tw = tmpl.shape
     # Get width and height of source image
     ih, iw = img.shape
+    # Check 'scale' param
+    if scale == 1:
+        resized = tmpl
+        rh, rw = th, tw
+        r = 1
+    else:
+        width = int(tw * scale)
+        # Resize
+        resized = imutils.resize(tmpl, width=width)
+        # Get width and height of resized template
+        rh, rw = resized.shape
+        r = tw / rw
     return result
