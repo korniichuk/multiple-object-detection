@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-# Version: 0.1a3
+# Version: 0.1a4
 
 from os.path import exists, isfile
 
 import cv2 as cv
 import imutils
+import numpy as np
 
 def multiple_objects_detection(template, image, scale=1.0,
         method='cv.TM_CCOEFF_NORMED', threshold=0.7, mode='hide'):
@@ -74,4 +75,9 @@ def multiple_objects_detection(template, image, scale=1.0,
         # Get width and height of resized template
         rh, rw = resized.shape
         r = tw / rw
+    # If template is bigger than source image, then return empty result
+    if (rh > ih) or (rw > iw):
+         return result
+    # Match template
+    match = cv.matchTemplate(img, resized, method)
     return result
