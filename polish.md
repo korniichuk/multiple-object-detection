@@ -24,6 +24,21 @@
 
 # Wymagania
 ## Ubuntu Desktop
+Zainstaluj paczki `python3-pil.imagetk` oraz `python3-tk`:
+```
+$ sudo apt-get update
+$ sudo apt-get install python3-pil.imagetk python3-tk
+```
+
+Zainstaluj biblioteki Pythona:
+```
+$ sudo pip install -r requirements.txt
+```
+
+lub
+```
+$ pipenv install
+```
 
 # Wersje bibliotek Pythona
 * [imutils](https://pypi.org/project/imutils/) wersja 0.5.2
