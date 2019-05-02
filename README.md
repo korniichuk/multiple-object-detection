@@ -36,7 +36,7 @@ By sliding, we mean moving the patch one pixel at a time (left to right, up to d
 For each location of template over source image, we store the metric in the result matrix. Each location (x, y) in result matrix contains the match metric.
 
 ## Portability
-`multiple-object-detection` sprawdzony na Ubuntu Desktop 18.04 LTS.
+`multiple-object-detection` checked on Ubuntu Desktop 18.04 LTS.
 
 ## Requirements
 ### Ubuntu Desktop

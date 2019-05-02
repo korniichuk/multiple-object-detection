@@ -21,7 +21,7 @@
 ## Jak to działa
 
 # Przenośność oprogramowania
-`multiple-object-detection` sprawdzone na Ubuntu Desktop 18.04 LTS.
+`multiple-object-detection` sprawdzony na Ubuntu Desktop 18.04 LTS.
 
 # Wymagania
 ## Ubuntu Desktop
