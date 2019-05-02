@@ -26,3 +26,7 @@
 ## Ubuntu Desktop
 
 # Wersje bibliotek Pythona
+* [imutils](https://pypi.org/project/imutils/) wersja 0.5.2
+* [numpy](https://pypi.org/project/numpy/) wersja 1.16.3
+* [opencv-python](https://pypi.org/project/opencv-python/) wersja 4.1.0.25
+* [tkinter](https://tkdocs.com/) wersja 8.6
