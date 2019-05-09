@@ -14,6 +14,11 @@
 * **[Wersje bibliotek Pythona](#wersje-bibliotek-Pythona)**
 
 # Wstęp
+Wielokrotne wykrywanie logotypu **Twitter** na przykładowym obrazie źródłowym:
+![match_twitter.jpg](img/match_twitter.jpg)
+
+Wielokrotne wykrywanie logotypu **Instagram** na przykładowym obrazie źródłowym:
+![match_instagram.jpg](img/match_instagram.jpg)
 
 # Teoria
 ## Czym jest dopasowywanie szablonów
