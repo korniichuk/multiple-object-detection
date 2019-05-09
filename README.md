@@ -1,23 +1,25 @@
 # multiple-object-detection
 **Name:** multiple-object-detection  
 **Description:** Multiple object detection with scale based on OpenCV Python library  
-**GitHub:** https://github.com/korniichuk/multiple-object-detection
+**GitHub:** [https://github.com/korniichuk/multiple-object-detection](https://github.com/korniichuk/multiple-object-detection)
 
 ## Table of Contents
 * **[Introduction](#introduction)**
 * **[Theory](#theory)**
-  * **[What is template matching](#what-is-template-matching)**
-  * **[How does it work](#how-does-it-work)**
+    * **[What is template matching](#what-is-template-matching)**
+    * **[How does it work](#how-does-it-work)**
 * **[Portability](#portability)**
 * **[Requirements](#requirements)**
-  * **[Ubuntu Desktop](#ubuntu-desktop)**
+    * **[Ubuntu Desktop](#ubuntu-desktop)**
 * **[Python lib versions](#python-lib-versions)**
 
 ## Introduction
 Multiple detection of **Twitter logo** in example source image:
+
 ![match_twitter.jpg](img/match_twitter.jpg)
 
 Multiple detection of **Instagram logo** in example source image:
+
 ![match_instagram.jpg](img/match_instagram.jpg)
 
 ## Theory
@@ -26,6 +28,7 @@ Multiple detection of **Instagram logo** in example source image:
 
 ### How does it work
 We need two primary components:
+
 * source image -- image in which we expect to find a match to the template image;
 * template -- patch image which will be compared to the template image.
 

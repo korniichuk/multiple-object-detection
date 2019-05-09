@@ -1,23 +1,25 @@
 # multiple-object-detection
 **Nazwa:** multiple-object-detection  
 **Opis:** Wielokrotne wykrywanie obiektu ze skalowaniem oparte na bibliotece Pythona OpenCV  
-**GitHub:** https://github.com/korniichuk/multiple-object-detection
+**GitHub:** [https://github.com/korniichuk/multiple-object-detection](https://github.com/korniichuk/multiple-object-detection)
 
 ## Spis treści
 * **[Wstęp](#wstęp)**
 * **[Teoria](#teoria)**
-  * **[Czym jest dopasowywanie wzorców](#czym-jest-dopasowywanie-wzorców)**
-  * **[Jak to działa](#jak-to-działa)**
+    * **[Czym jest dopasowywanie wzorców](#czym-jest-dopasowywanie-wzorców)**
+    * **[Jak to działa](#jak-to-działa)**
 * **[Przenośność oprogramowania](#przenośność-oprogramowania)**
 * **[Wymagania](#wymagania)**
-  * **[Ubuntu Desktop](#ubuntu-desktop)**
+    * **[Ubuntu Desktop](#ubuntu-desktop)**
 * **[Wersje bibliotek Pythona](#wersje-bibliotek-Pythona)**
 
 # Wstęp
 Wielokrotne wykrywanie logotypu **Twitter** na przykładowym obrazie źródłowym:
+
 ![match_twitter.jpg](img/match_twitter.jpg)
 
 Wielokrotne wykrywanie logotypu **Instagram** na przykładowym obrazie źródłowym:
+
 ![match_instagram.jpg](img/match_instagram.jpg)
 
 # Teoria
@@ -26,6 +28,7 @@ Wielokrotne wykrywanie logotypu **Instagram** na przykładowym obrazie źródło
 
 ## Jak to działa
 Potrzebujemy dwóch podstawowych elementów:
+
 * obraz źródłowy -- obraz, na którym spodziewamy się znaleźć obszary podobne do wzorca;
 * wzorzec -- obraz, który zostanie porównany z obszarem obrazu źródłowego.
 
