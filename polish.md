@@ -25,6 +25,15 @@ Wielokrotne wykrywanie logotypu **Instagram** na przykładowym obrazie źródło
 **Dopasowywanie wzorców** (ang. template matching) to technika znajdowania obszarów obrazu, które pasują (są podobne) do wzorca.
 
 ## Jak to działa
+Potrzebujemy dwóch podstawowych elementów:
+* obraz źródłowy -- obraz, na którym spodziewamy się znaleźć obszary podobne do wzorca;
+* wzorzec -- obraz, który zostanie porównany z obszarem obrazu źródłowego.
+
+Celem jest wykrycie najbardziej pasującego obszaru. Aby zidentyfikować pasujący obszar, musimy porównać wzorzec z obrazem źródłowym, przesuwając go.
+
+Pod przesuwaniem, mamy na myśli przesuwanie o jeden piksel na raz (od lewej do prawej, od dołu do góry). W każdej pozycji obliczana jest metryka, która przedstawia, jak „dobre” czy „źle” jest dopasowywanie w tej pozycji (lub jak podobny jest wzorzec do tego konkretnego obszaru obrazu źródłowego).
+
+Dla każdej pozycji wzorca przechowujemy metrykę w macierzy wyników. Każda pozycja (x, y) w macierzy wyników zawiera metrykę dopasowania.
 
 # Przenośność oprogramowania
 `multiple-object-detection` sprawdzony na Ubuntu Desktop 18.04 LTS.
