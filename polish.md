@@ -6,7 +6,7 @@
 ## Spis treści
 * **[Wstęp](#wstęp)**
 * **[Teoria](#teoria)**
-  * **[Czym jest dopasowywanie szablonów](#czym-jest-dopasowywanie-szablonów)**
+  * **[Czym jest dopasowywanie wzorców](#czym-jest-dopasowywanie-wzorców)**
   * **[Jak to działa](#jak-to-działa)**
 * **[Przenośność oprogramowania](#przenośność-oprogramowania)**
 * **[Wymagania](#wymagania)**
@@ -21,7 +21,8 @@ Wielokrotne wykrywanie logotypu **Instagram** na przykładowym obrazie źródło
 ![match_instagram.jpg](img/match_instagram.jpg)
 
 # Teoria
-## Czym jest dopasowywanie szablonów
+## Czym jest dopasowywanie wzorców
+**Dopasowywanie wzorców** (ang. template matching) to technika znajdowania obszarów obrazu, które pasują (są podobne) do wzorca.
 
 ## Jak to działa
 
